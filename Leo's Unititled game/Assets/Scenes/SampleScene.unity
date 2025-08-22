@@ -238,7 +238,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &132535449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   age: 31
   moveSpeed: 2.5
   gameOver: 0
-  rb: {fileID: 0}
+  rb: {fileID: 132535448}
 --- !u!58 &132535450
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -666,7 +666,7 @@ Rigidbody2D:
   m_Mass: 5
   m_LinearDamping: 5
   m_AngularDamping: 2
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -677,7 +677,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
