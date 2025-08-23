@@ -1,17 +1,44 @@
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public string playerName = "Astronaut";
-    public int age = 31;
-    public float moveSpeed = 2.5f;
-    public bool gameOver = true;
+    private Rigidbody2D rb;
 
-    public Rigidbody2D rb;
+    private float xInput;
+    [SerializeField] private float moveSpeed = 4f;
+    [SerializeField] private float jumpForce = 8f;
 
     private void Awake()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
+
+    private void Jump()
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+    }
+
+    private void HandleMovement()
+    {
+        rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+        
+    }
+
+    private void HandleInput()
+    {
+        xInput = Input.GetAxisRaw("Horizontal");
+        HandleMovement();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+    }
+
+
+    private void Update()
+    {
+        HandleInput();
+        HandleMovement();
+    }
+
+    
 }
